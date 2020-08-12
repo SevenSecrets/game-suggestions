@@ -26,7 +26,7 @@ class App extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h3>Create a Poll</h3>
             <label>
-              Title:
+              Title:&nbsp;
               <input type="text" name="title" placeholder="Enter a poll title" onChange={this.handleChange} value={this.state.pollTitle} />
             </label>
             <input type="submit" value="Create" />

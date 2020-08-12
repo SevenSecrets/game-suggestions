@@ -9,10 +9,10 @@ test('renders poll creation form', () => {
 });
 
 test('can fill and submit create a poll', () => {
-  const { getByDisplayValue, getByLabelText, getByRole } = render(<App />);
+  const { getByDisplayValue, getByLabelText, getByTestId } = render(<App />);
   const pollSubmit = getByDisplayValue(/create/i)
   const pollTitle = getByLabelText(/title/i)
   fireEvent.input(pollTitle, 'poll title')
   fireEvent.submit(pollSubmit)
-  expect(getByRole("poll")).toBeInTheDocument();
+  expect(getByTestId("poll")).toBeInTheDocument();
 })
