@@ -1,11 +1,19 @@
 import React from 'react';
 
-function Poll() {
-  return (
-    <div className="Poll">
-        <h2>Create a Poll</h2>
-    </div>
-  );
+class Poll extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { title: props.title }
+    }
+
+    render() {
+        return (
+            <div className="Poll" role="poll">
+                <h3>{this.state.title}</h3>
+            </div>
+        );
+    }
 }
 
 export default Poll;
