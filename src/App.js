@@ -17,6 +17,7 @@ class App extends React.Component {
 
   handleSubmit(event) {
     this.setState({ pollCreated: true });
+    event.preventDefault();
   }
 
   render() {
@@ -27,8 +28,9 @@ class App extends React.Component {
             <h3>Create a Poll</h3>
             <label>
               Title:&nbsp;
-              <input type="text" name="title" placeholder="Enter a poll title" onChange={this.handleChange} value={this.state.pollTitle} />
+              <input type="text" placeholder="Enter a poll title" value={this.state.pollTitle} onChange={this.handleChange} />
             </label>
+            &nbsp;
             <input type="submit" value="Create" />
           </form>
         }
