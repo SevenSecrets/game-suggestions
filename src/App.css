@@ -1,26 +1,51 @@
 .App {
   text-align: center;
+  color: #F6F3F4;
 }
 
 form {
   max-width: 500px;
   margin: auto;
+  margin-top: 1%;
   padding: 1%;
+  border: 5px solid #83A1AC;
+  border-radius: 5px;
+}
+
+form {
+  background-color: #;
+}
+
+input[type=submit] {
+  background-color: #3B962E;
+  border: none;
+  border-radius: 5px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  border: 1px solid #ddd;
-  max-width: 500px;
+  border: 5px solid #83A1AC;
+  max-width: 300px;
   margin: auto;
+  margin-top: 1%;
+  border-radius: 5px;
 }
 
 ul li {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 5px solid #83A1AC;
   padding: 1%;
 }
 
 ul li:last-child {
   border-bottom: none;
 }
+
+/* 
+  COLOUR SCHEME:
+  TEXT ETC: F6F3F4
+  ACCENT 1: 83A1AC
+  ACCENT 2: 816065
+  MAIN THEME: 3B962E
+  BACKGROUND: 191A22 
+*/

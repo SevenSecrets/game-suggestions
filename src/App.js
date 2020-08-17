@@ -31,7 +31,7 @@ class App extends React.Component {
               <input type="text" placeholder="Enter a poll title" value={this.state.pollTitle} onChange={this.handleChange} />
             </label>
             &nbsp;
-            <input type="submit" value="Create" />
+            <input className="submit" type="submit" value="Create" />
           </form>
         }
         {this.state.pollCreated &&

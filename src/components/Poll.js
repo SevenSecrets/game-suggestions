@@ -60,7 +60,7 @@ class Poll extends React.Component {
                         <input type="text" placeholder="Add a game to the poll" value={this.state.newGameValue} onChange={this.handleChange} />
                     </label>
                     &nbsp;
-                    <input type="submit" value="Add" />
+                    <input className="submit" type="submit" value="Add" />
                 </form>
             </div>
         );
