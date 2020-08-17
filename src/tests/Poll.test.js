@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, getByDisplayValue, getByTestId, within, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import Poll from '../components/Poll';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ test('renders game entry field/s', () => {
 
 test('adds new game to the poll', async () => {
     axios.mockResolvedValue({ data: [{ name: "EU4" }] });
-    const { getByText, getByLabelText, getByDisplayValue, getByTestId } = render(<Poll title="poll title" />);
+    const { getByText, getByLabelText, getByDisplayValue } = render(<Poll title="poll title" />);
     const newGameInput = getByLabelText(/enter new game/i);
     const newGameSubmit = getByDisplayValue(/add/i);
     fireEvent.input(newGameInput, "EU4");

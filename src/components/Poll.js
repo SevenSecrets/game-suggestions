@@ -26,7 +26,6 @@ class Poll extends React.Component {
             data: `search "${gameTitle}"; fields name;`
         })
         .then(response => {
-            console.log(response.data);
             this.addNewGame(response.data[0]);
         })
         .catch(err => {
