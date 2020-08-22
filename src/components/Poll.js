@@ -48,12 +48,11 @@ class Poll extends React.Component {
 
     render() {
         const games = this.state.gameList.map((game) =>
-            <li key={game.key} >{game.name}</li>
+            <li key={game.key} >{game.name} <button data-testid={game.key}>Vote</button></li>
         );
         return (
             <div className="Poll" data-testid="poll">
-                <h3>{this.state.title}</h3>
-                <ul data-testid="games-list">{games}</ul>
+                <h3>{this.state.title.charAt(0).toUpperCase() + this.state.title.slice(1)}</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Enter New Game:&nbsp;
@@ -62,6 +61,7 @@ class Poll extends React.Component {
                     &nbsp;
                     <input className="submit" type="submit" value="Add" />
                 </form>
+                <ul data-testid="games-list">{games}</ul>
             </div>
         );
     }

@@ -28,3 +28,13 @@ test('adds new game to the poll', async () => {
     const newGameAdded = getByText(/EU4/i);
     expect(newGameAdded).toBeInTheDocument();
 })
+
+test('new game has a button on it', async () => {
+    axios.mockResolvedValue({data: [{name: "EU4" }] });
+    const { getByText, getByLabelText, getByDisplayValue, getByTestId } = render(<Poll title="poll title" />);
+    fireEvent.input(getByLabelText(/enter new game/i), "EU4");
+    fireEvent.click(getByDisplayValue(/add/i));
+    await waitFor(() => expect(getByText(/EU4/i)).toBeInTheDocument());
+    const newGameButton = getByTestId(/0/i);
+    expect(newGameButton).toBeInTheDocument();
+})

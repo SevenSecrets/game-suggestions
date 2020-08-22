@@ -3,7 +3,7 @@
   color: #F6F3F4;
 }
 
-form {
+.Poll {
   max-width: 500px;
   margin: auto;
   margin-top: 1%;
@@ -13,19 +13,24 @@ form {
 }
 
 form {
-  background-color: #;
+  padding: 1%;
+}
+
+button {
+  background-color: #3B962E;
+  border: none;
+  border-radius: 3px;
 }
 
 input[type=submit] {
   background-color: #3B962E;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  border: 5px solid #83A1AC;
   max-width: 300px;
   margin: auto;
   margin-top: 1%;
@@ -33,12 +38,13 @@ ul {
 }
 
 ul li {
-  border-bottom: 5px solid #83A1AC;
+  border: 5px solid #83A1AC;
   padding: 1%;
+  border-bottom: none;
 }
 
 ul li:last-child {
-  border-bottom: none;
+  border-bottom: 5px solid #83A1AC;
 }
 
 /* 
