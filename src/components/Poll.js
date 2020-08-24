@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import GameList from './GameList';
 
 class Poll extends React.Component {
 
@@ -36,7 +37,7 @@ class Poll extends React.Component {
 
     addNewGame(gameData) {
         let gameList = this.state.gameList;
-        gameList.push({ key: gameList.length, name: gameData.name });
+        gameList.push(gameData.name);
         this.setState({ gameList: gameList });
     }
 
@@ -47,9 +48,6 @@ class Poll extends React.Component {
     }
 
     render() {
-        const games = this.state.gameList.map((game) =>
-            <li key={game.key} >{game.name} <button data-testid={game.key}>Vote</button></li>
-        );
         return (
             <div className="Poll" data-testid="poll">
                 <h3>{this.state.title.charAt(0).toUpperCase() + this.state.title.slice(1)}</h3>
@@ -61,7 +59,7 @@ class Poll extends React.Component {
                     &nbsp;
                     <input className="submit" type="submit" value="Add" />
                 </form>
-                <ul data-testid="games-list">{games}</ul>
+                <GameList gameNames={this.state.gameList} />
             </div>
         );
     }
